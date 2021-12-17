@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '6.3.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.1'
+}
+
+group 'me.tnthax'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'org.jhardware:jHardware:0.8.6'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                'Implementation-Version': version,
+                'Main-Class': 'Main'
+    }
+}
